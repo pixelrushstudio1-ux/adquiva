@@ -1,1914 +1,1121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description"
-content="Adquvia creates professional AI-powered video advertisements for products and brands.">
-
-<title>Adquvia — AI Video Ads</title>
-
-<style>
-
-:root{
-    --bg:#f7f7fb;
-    --surface:rgba(255,255,255,.82);
-    --card:#ffffff;
-    --text:#11131a;
-    --muted:#646875;
-    --line:rgba(17,19,26,.10);
-    --accent:#6c4df6;
-    --accent2:#a477ff;
-    --shadow:0 20px 60px rgba(35,25,80,.12);
-}
-
-body.dark{
-    --bg:#09090f;
-    --surface:rgba(20,20,30,.82);
-    --card:#15151f;
-    --text:#f5f4fa;
-    --muted:#aaa9b7;
-    --line:rgba(255,255,255,.10);
-    --shadow:0 20px 60px rgba(0,0,0,.4);
-}
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,
-    "Segoe UI",Roboto,Arial,sans-serif;
-
-    background:
-    radial-gradient(
-        circle at 10% 0%,
-        rgba(108,77,246,.15),
-        transparent 30%
-    ),
-    var(--bg);
-
-    color:var(--text);
-    line-height:1.6;
-    transition:.3s ease;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-
-/* ================= NAVBAR ================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:50;
-
-    backdrop-filter:blur(18px);
-
-    background:var(--surface);
-
-    border-bottom:1px solid var(--line);
-}
-
-.nav{
-    height:72px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:26px;
-    font-weight:900;
-    letter-spacing:-1px;
-}
-
-.logo span{
-    color:var(--accent);
-}
-
-.navlinks{
-    display:flex;
-    gap:25px;
-
-    color:var(--muted);
-
-    font-size:14px;
-    font-weight:700;
-}
-
-.navlinks a{
-    transition:.2s;
-}
-
-.navlinks a:hover{
-    color:var(--accent);
-}
-
-.actions{
-    display:flex;
-    gap:10px;
-    align-items:center;
-}
-
-.iconbtn,
-.btn{
-    border:1px solid var(--line);
-    background:var(--surface);
-    color:var(--text);
-
-    border-radius:14px;
-
-    padding:11px 15px;
-
-    cursor:pointer;
-
-    font-weight:800;
-
-    transition:.25s;
-}
-
-.iconbtn:hover,
-.btn:hover{
-    transform:translateY(-2px);
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-
-    border:0;
-}
-
-.primary{
-    background:
-    linear-gradient(
-        135deg,
-        var(--accent),
-        var(--accent2)
-    );
-
-    color:white;
-
-    box-shadow:
-    0 12px 30px rgba(108,77,246,.28);
-}
-
-
-/* ================= HERO ================= */
-
-.hero{
-    padding:100px 0 85px;
-
-    text-align:center;
-
-    position:relative;
-    overflow:hidden;
-}
-
-.hero::before{
-    content:"";
-
-    position:absolute;
-
-    width:350px;
-    height:350px;
-
-    background:rgba(108,77,246,.15);
-
-    filter:blur(90px);
-
-    border-radius:50%;
-
-    top:-150px;
-    left:-100px;
-
-    animation:float 7s infinite alternate ease-in-out;
-}
-
-.hero::after{
-    content:"";
-
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    background:rgba(180,80,255,.12);
-
-    filter:blur(90px);
-
-    border-radius:50%;
-
-    right:-100px;
-    bottom:-100px;
-
-    animation:float 8s infinite alternate-reverse ease-in-out;
-}
-
-@keyframes float{
-    from{
-        transform:translateY(0);
-    }
-    to{
-        transform:translateY(35px);
-    }
-}
-
-.badge{
-    display:inline-block;
-
-    padding:7px 14px;
-
-    border:1px solid rgba(108,77,246,.25);
-
-    background:rgba(108,77,246,.08);
-
-    color:var(--accent);
-
-    border-radius:999px;
-
-    font-size:13px;
-
-    font-weight:900;
-
-    margin-bottom:18px;
-
-    animation:pulse 2.5s infinite;
-}
-
-@keyframes pulse{
-    0%,100%{
-        transform:scale(1);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adquiva - Order High-Converting Video Ads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* Purple & White Theme (Light Mode) */
+      --primary: #6b21a8;
+      --primary-light: #8b5cf6;
+      --primary-hover: #581c87;
+      --accent: #a855f7;
+      --neon-purple: #c084fc;
+      --soft-purple: #f3e8ff;
+      --bg: #fafafc;
+      --surface: #ffffff;
+      --surface-variant: #f4edfc;
+      --text: #180e29;
+      --text-muted: #6b637b;
+      --border: #e4d7f5;
+      --whatsapp: #25d366;
+      --whatsapp-hover: #1eb956;
+      --green: #10b981;
+      --shadow: 0 10px 30px rgba(107, 33, 168, 0.08);
+      --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
     }
 
-    50%{
-        transform:scale(1.04);
-    }
-}
-
-h1{
-    font-size:clamp(43px,7vw,78px);
-
-    line-height:1.02;
-
-    letter-spacing:-4px;
-
-    max-width:900px;
-
-    margin:auto;
-}
-
-.gradient{
-    background:
-    linear-gradient(
-        135deg,
-        var(--accent),
-        #d05cff
-    );
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    color:transparent;
-}
-
-.hero p{
-    max-width:650px;
-
-    margin:22px auto 30px;
-
-    color:var(--muted);
-
-    font-size:18px;
-}
-
-.heroBtns{
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-}
-
-
-/* ================= SECTIONS ================= */
-
-.section{
-    padding:80px 0;
-}
-
-.sectionHead{
-    text-align:center;
-
-    margin-bottom:38px;
-}
-
-.sectionHead h2{
-    font-size:38px;
-
-    letter-spacing:-1.5px;
-}
-
-.sectionHead p{
-    color:var(--muted);
-
-    margin-top:8px;
-}
-
-
-/* ================= CARDS ================= */
-
-.grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:20px;
-}
-
-.card{
-    background:var(--card);
-
-    border:1px solid var(--line);
-
-    border-radius:24px;
-
-    padding:25px;
-
-    box-shadow:var(--shadow);
-
-    transition:.3s;
-
-    transform:translateY(0);
-}
-
-.card:hover{
-    transform:translateY(-8px);
-
-    box-shadow:
-    0 25px 70px rgba(35,25,80,.18);
-}
-
-
-/* ================= SAMPLE ADS ================= */
-
-.demo{
-    height:210px;
-
-    border-radius:18px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #16121f,
-        #443080
-    );
-
-    color:white;
-
-    font-size:25px;
-
-    font-weight:900;
-
-    margin-bottom:18px;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.demo::before{
-    content:"";
-
-    position:absolute;
-
-    width:100px;
-    height:300px;
-
-    background:rgba(255,255,255,.12);
-
-    transform:rotate(25deg);
-
-    left:-150px;
-
-    animation:shine 4s infinite;
-}
-
-@keyframes shine{
-
-    0%{
-        left:-150px;
+    [data-theme="dark"] {
+      /* Obsidian Purple & White Glow (Dark Mode) */
+      --primary: #c084fc;
+      --primary-light: #a855f7;
+      --primary-hover: #d8b4fe;
+      --accent: #8b5cf6;
+      --neon-purple: #e9d5ff;
+      --soft-purple: #23163a;
+      --bg: #0d0817;
+      --surface: #150f24;
+      --surface-variant: #1f1636;
+      --text: #f5eefd;
+      --text-muted: #a69cb7;
+      --border: #332452;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
 
-    50%,100%{
-        left:110%;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
     }
 
-}
-
-.demo::after{
-    content:"▶";
-
-    display:grid;
-
-    place-items:center;
-
-    position:absolute;
-
-    right:16px;
-    bottom:16px;
-
-    width:45px;
-    height:45px;
-
-    border-radius:50%;
-
-    background:white;
-
-    color:#111;
-
-    font-size:15px;
-}
-
-.card h3{
-    font-size:20px;
-}
-
-.card p{
-    color:var(--muted);
-
-    font-size:14px;
-
-    margin-top:5px;
-}
-
-
-/* ================= STEPS ================= */
-
-.steps{
-    counter-reset:step;
-}
-
-.step{
-    position:relative;
-}
-
-.step::before{
-
-    counter-increment:step;
-
-    content:counter(step);
-
-    display:grid;
-
-    place-items:center;
-
-    width:42px;
-    height:42px;
-
-    border-radius:13px;
-
-    background:rgba(108,77,246,.12);
-
-    color:var(--accent);
-
-    font-weight:900;
-
-    margin-bottom:18px;
-}
-
-
-/* ================= PRICING ================= */
-
-.pricing .card{
-    position:relative;
-}
-
-.price{
-    font-size:38px;
-
-    font-weight:900;
-
-    margin:12px 0;
-}
-
-.price small{
-    font-size:14px;
-
-    color:var(--muted);
-
-    font-weight:600;
-}
-
-.card ul{
-    list-style:none;
-
-    color:var(--muted);
-
-    margin:18px 0 23px;
-}
-
-.card li{
-    margin:9px 0;
-}
-
-.card li::before{
-    content:"✓";
-
-    color:var(--accent);
-
-    font-weight:900;
-
-    margin-right:8px;
-}
-
-.popular{
-    outline:2px solid var(--accent);
-}
-
-.tag{
-    position:absolute;
-
-    top:18px;
-    right:18px;
-
-    background:var(--accent);
-
-    color:white;
-
-    border-radius:999px;
-
-    padding:5px 10px;
-
-    font-size:11px;
-
-    font-weight:900;
-}
-
-
-/* ================= ORDER FORM ================= */
-
-.formWrap{
-
-    max-width:820px;
-
-    margin:auto;
-
-    background:var(--card);
-
-    border:1px solid var(--line);
-
-    border-radius:28px;
-
-    padding:30px;
-
-    box-shadow:var(--shadow);
-}
-
-.formGrid{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:16px;
-}
-
-.field{
-    margin-bottom:15px;
-}
-
-.field.full{
-    grid-column:1/-1;
-}
-
-label{
-    display:block;
-
-    font-weight:800;
-
-    font-size:13px;
-
-    margin-bottom:7px;
-}
-
-input,
-select,
-textarea{
-
-    width:100%;
-
-    padding:13px 14px;
-
-    border:1px solid var(--line);
-
-    background:var(--bg);
-
-    color:var(--text);
-
-    border-radius:13px;
-
-    outline:none;
-
-    font:inherit;
-
-    transition:.2s;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-
-    border-color:var(--accent);
-
-    box-shadow:
-    0 0 0 3px rgba(108,77,246,.12);
-}
-
-textarea{
-
-    min-height:120px;
-
-    resize:vertical;
-}
-
-.filebox{
-
-    border:1.5px dashed rgba(108,77,246,.45);
-
-    padding:18px;
-
-    border-radius:15px;
-
-    background:rgba(108,77,246,.05);
-}
-
-#preview{
-
-    display:none;
-
-    width:100%;
-
-    max-height:260px;
-
-    object-fit:contain;
-
-    border-radius:13px;
-
-    margin-top:12px;
-}
-
-.formBtns{
-
-    display:flex;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-
-    margin-top:5px;
-}
-
-.notice{
-
-    font-size:12px;
-
-    color:var(--muted);
-
-    margin-top:12px;
-}
-
-
-.price-box{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-    padding:18px 20px;
-    border:1px solid rgba(108,77,246,.25);
-    border-radius:16px;
-    background:rgba(108,77,246,.07);
-}
-
-.price-box span{
-    color:var(--muted);
-    font-weight:800;
-}
-
-.price-box strong{
-    font-size:32px;
-    color:var(--accent);
-    transition:.25s ease;
-}
-
-.price-box strong.price-pop{
-    transform:scale(1.08);
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-
-    padding:35px 0;
-
-    border-top:1px solid var(--line);
-
-    color:var(--muted);
-
-    text-align:center;
-}
-
-
-/* ================= ANIMATION ================= */
-
-.reveal{
-
-    opacity:0;
-
-    transform:translateY(25px);
-
-    transition:
-    opacity .7s ease,
-    transform .7s ease;
-}
-
-.reveal.show{
-
-    opacity:1;
-
-    transform:none;
-}
-
-
-/* ================= TOAST ================= */
-
-.toast{
-
-    position:fixed;
-
-    bottom:24px;
-
-    right:24px;
-
-    background:#17151f;
-
-    color:white;
-
-    padding:14px 18px;
-
-    border-radius:14px;
-
-    box-shadow:var(--shadow);
-
-    display:none;
-
-    z-index:100;
-
-    font-weight:700;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:760px){
-
-    .navlinks{
-        display:none;
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    .hero{
-        padding-top:65px;
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--card-shadow);
     }
 
-    h1{
-        letter-spacing:-2.5px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent), var(--neon-purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 900;
+      font-size: 20px;
+      box-shadow: 0 4px 12px rgba(107, 33, 168, 0.3);
     }
 
-    .formGrid{
-        grid-template-columns:1fr;
+    .brand-text h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .field.full{
-        grid-column:auto;
+    .badge-ads {
+      font-size: 10px;
+      font-weight: 700;
+      background: var(--soft-purple);
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
     }
 
-    .section{
-        padding:60px 0;
+    .brand-text p {
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
-    .sectionHead h2{
-        font-size:31px;
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .hero p{
-        font-size:16px;
+    .theme-btn, .contact-btn {
+      background: var(--surface-variant);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-}
+    .theme-btn:hover, .contact-btn:hover {
+      border-color: var(--primary);
+    }
 
-</style>
+    /* Container */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 30px 20px 60px;
+      width: 100%;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, var(--soft-purple) 0%, var(--surface) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .hero-banner h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .hero-banner p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      max-width: 620px;
+    }
+
+    .features-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+    }
+
+    .feature-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .feature-chip .val {
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--primary);
+    }
+
+    .feature-chip .lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .card-header h3 {
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guarantee-badge {
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    /* Pricing Section */
+    .quote-display {
+      background: linear-gradient(135deg, var(--soft-purple), var(--surface-variant));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .quote-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+
+    .quote-amount {
+      font-size: 38px;
+      font-weight: 900;
+      color: var(--primary);
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .quote-amount span {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .duration-indicator {
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 18px;
+      border-radius: 12px;
+    }
+
+    .duration-indicator .num {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .duration-indicator .unit {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .presets-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .presets-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .preset-pill {
+      background: var(--surface-variant);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .preset-pill:hover, .preset-pill.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .step-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--surface-variant);
+      border: 1px solid var(--border);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+    }
+
+    input[type="range"] {
+      flex: 1;
+      height: 8px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .price-formula-note {
+      background: var(--surface-variant);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .form-group label span.required {
+      color: #ef4444;
+    }
+
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 85px;
+    }
+
+    .ratio-options, .style-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .option-chip {
+      background: var(--surface-variant);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .option-chip.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* Image Gallery Section */
+    .upload-box {
+      border: 2px dashed var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      background: var(--surface-variant);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .upload-box:hover {
+      border-color: var(--primary);
+    }
+
+    .upload-box input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .upload-icon {
+      font-size: 32px;
+      margin-bottom: 6px;
+    }
+
+    .gallery-preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .preview-item {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .preview-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .preview-item .remove-btn {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Action Buttons */
+    .action-card {
+      background: var(--surface);
+      border: 2px solid var(--primary);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(107, 33, 168, 0.15);
+    }
+
+    .order-summary-strip {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .order-summary-strip .title {
+      font-size: 11px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      font-weight: 700;
+    }
+
+    .order-summary-strip .val {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .order-summary-strip .price {
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .btn-whatsapp {
+      width: 100%;
+      padding: 16px;
+      background: var(--whatsapp);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+      animation: pulse 2s infinite;
+      margin-bottom: 12px;
+    }
+
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-hover);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    .btn-email {
+      width: 100%;
+      padding: 15px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .btn-email:hover {
+      background: var(--primary-hover);
+    }
+
+    .secondary-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-secondary {
+      flex: 1;
+      padding: 10px;
+      background: var(--surface-variant);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      max-width: 440px;
+      width: 100%;
+      padding: 28px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .modal-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(37, 211, 102, 0.15);
+      color: var(--whatsapp);
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .modal-box h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .modal-box p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .modal-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      margin-top: auto;
+    }
+  </style>
 </head>
-
-
-<body>
-
-
-<!-- ================= HEADER ================= -->
-
-<header>
-
-<div class="container nav">
-
-<a class="logo" href="#">
-    Ad<span>quvia</span>
-</a>
-
-<nav class="navlinks">
-
-<a href="#samples">Samples</a>
-
-<a href="#pricing">Pricing</a>
-
-<a href="#how">How It Works</a>
-
-<a href="#order">Order</a>
-
-</nav>
-
-
-<div class="actions">
-
-<button
-class="iconbtn"
-id="themeBtn"
-aria-label="Toggle dark mode">
-☾
-</button>
-
-<a
-class="btn primary"
-href="#order">
-Start an Order
-</a>
-
-</div>
-
-</div>
-
-</header>
-
-
-
-<main>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-<div class="container reveal">
-
-<div class="badge">
-✦ AI-Powered Product Advertising
-</div>
-
-
-<h1>
-
-Turn your product into a
-
-<span class="gradient">
-scroll-stopping ad.
-</span>
-
-</h1>
-
-
-<p>
-
-Send us your product details and we'll transform
-your idea into a professional video advertisement
-designed for social media and online stores.
-
-</p>
-
-
-<div class="heroBtns">
-
-<a
-class="btn primary"
-href="#order">
-
-Create My Ad →
-
-</a>
-
-
-<a
-class="btn"
-href="#samples">
-
-See Samples
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= SAMPLES ================= -->
-
-<section
-class="section"
-id="samples">
-
-<div class="container">
-
-
-<div class="sectionHead reveal">
-
-<h2>
-What we can create
-</h2>
-
-<p>
-Give your product the presentation it deserves.
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<article class="card reveal">
-
-<div class="demo">
-SKINCARE
-</div>
-
-<h3>
-Beauty & Skincare
-</h3>
-
-<p>
-Elegant product shots, cinematic motion
-and premium visuals.
-</p>
-
-</article>
-
-
-
-<article class="card reveal">
-
-<div class="demo">
-FASHION
-</div>
-
-<h3>
-Fashion & Lifestyle
-</h3>
-
-<p>
-Fast-paced social ads that showcase
-your products beautifully.
-</p>
-
-</article>
-
-
-
-<article class="card reveal">
-
-<div class="demo">
-E-COMMERCE
-</div>
-
-<h3>
-E-commerce Products
-</h3>
-
-<p>
-Product-focused ads made to capture
-attention and explain value.
-</p>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= HOW IT WORKS ================= -->
-
-<section
-class="section"
-id="how">
-
-<div class="container">
-
-
-<div class="sectionHead reveal">
-
-<h2>
-Simple. Fast. Creative.
-</h2>
-
-<p>
-Three steps from your product to your ad.
-</p>
-
-</div>
-
-
-<div class="grid steps">
-
-
-<article class="card step reveal">
-
-<h3>
-Send your product
-</h3>
-
-<p>
-Upload your product image and tell us
-what makes it special.
-</p>
-
-</article>
-
-
-
-<article class="card step reveal">
-
-<h3>
-We create the ad
-</h3>
-
-<p>
-We turn your information into a polished
-AI-powered advertisement.
-</p>
-
-</article>
-
-
-
-<article class="card step reveal">
-
-<h3>
-Receive your video
-</h3>
-
-<p>
-We deliver the finished video ready for
-your social media campaign.
-</p>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= PRICING ================= -->
-
-<section
-class="section pricing"
-id="pricing">
-
-<div class="container">
-
-
-<div class="sectionHead reveal">
-
-<h2>
-Choose your ad
-</h2>
-
-<p>
-Starter prices — you can change these anytime.
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<!-- BASIC -->
-
-<article class="card reveal">
-
-<h3>
-Basic
-</h3>
-
-<div class="price">
-$10 <small>/ ad</small>
-</div>
-
-<ul>
-
-<li>15-second video</li>
-
-<li>Product-focused visuals</li>
-
-<li>Background music</li>
-
-<li>1 revision</li>
-
-</ul>
-
-<a
-class="btn"
-href="#order">
-
-Choose Basic
-
-</a>
-
-</article>
-
-
-
-<!-- STANDARD -->
-
-<article class="card popular reveal">
-
-<span class="tag">
-POPULAR
-</span>
-
-<h3>
-Standard
-</h3>
-
-<div class="price">
-$20 <small>/ ad</small>
-</div>
-
-<ul>
-
-<li>30-second video</li>
-
-<li>Multiple scenes</li>
-
-<li>Music + sound design</li>
-
-<li>Voiceover/text options</li>
-
-<li>2 revisions</li>
-
-</ul>
-
-<a
-class="btn primary"
-href="#order">
-
-Choose Standard
-
-</a>
-
-</article>
-
-
-
-<!-- PREMIUM -->
-
-<article class="card reveal">
-
-<h3>
-Premium
-</h3>
-
-<div class="price">
-$40 <small>/ ad</small>
-</div>
-
-<ul>
-
-<li>30–45-second video</li>
-
-<li>Premium cinematic scenes</li>
-
-<li>Music + sound design</li>
-
-<li>Voiceover + captions</li>
-
-<li>3 revisions</li>
-
-</ul>
-
-<a
-class="btn"
-href="#order">
-
-Choose Premium
-
-</a>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ================= ORDER ================= -->
-
-<section
-class="section"
-id="order">
-
-<div class="container">
-
-
-<div class="sectionHead reveal">
-
-<h2>
-Start your ad order
-</h2>
-
-<p>
-Fill in the details below and send your order
-directly to Adquvia.
-</p>
-
-</div>
-
-
-
-<div class="formWrap reveal">
-
-
-<form id="orderForm">
-
-
-<div class="formGrid">
-
-
-<!-- NAME -->
-
-<div class="field">
-
-<label>
-Your Name *
-</label>
-
-<input
-id="name"
-required
-placeholder="John / Business name">
-
-</div>
-
-
-
-<!-- PHONE -->
-
-<div class="field">
-
-<label>
-Your WhatsApp / Phone *
-</label>
-
-<input
-id="phone"
-required
-placeholder="+92...">
-
-</div>
-
-
-
-<!-- EMAIL -->
-
-<div class="field">
-
-<label>
-Email *
-</label>
-
-<input
-id="email"
-type="email"
-required
-placeholder="you@example.com">
-
-</div>
-
-
-
-<!-- PRODUCT -->
-
-<div class="field">
-
-<label>
-Product Name *
-</label>
-
-<input
-id="product"
-required
-placeholder="e.g. Luxury Face Serum">
-
-</div>
-
-
-
-<!-- PACKAGE -->
-
-<div class="field">
-
-<label>
-Ad Package
-</label>
-
-<select id="package">
-
-<option value="Basic">
-Basic
-</option>
-
-<option value="Standard" selected>
-Standard
-</option>
-
-<option value="Premium">
-Premium
-</option>
-
-</select>
-
-</div>
-
-
-
-<!-- LENGTH -->
-
-<div class="field">
-
-<label>
-Video Length
-</label>
-
-<select id="length">
-
-<option>
-15 seconds
-</option>
-
-<option selected>
-30 seconds
-</option>
-
-<option>
-45 seconds
-</option>
-
-<option>
-60 seconds
-</option>
-
-</select>
-
-</div>
-
-<!-- DYNAMIC PRICE -->
-<div class="field full">
-    <div class="price-box">
-        <span>Estimated Price</span>
-        <strong id="totalPrice">$30</strong>
+<body data-theme="light">
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="brand">
+      <div class="brand-logo">▶</div>
+      <div class="brand-text">
+        <h1>Adquiva <span class="badge-ads">VIDEO ADS</span></h1>
+        <p>Custom Video Commercials • $1/Second</p>
+      </div>
+    </a>
+
+    <div class="header-actions">
+      <a href="tel:+923054272499" class="contact-btn">📞 +92 305 4272499</a>
+      <button class="theme-btn" id="themeToggle">🌓 Theme</button>
     </div>
-</div>
-
-
-
-<!-- IMAGE -->
-
-<div class="field full">
-
-<label>
-Product Image *
-</label>
-
-<div class="filebox">
-
-<input
-id="image"
-type="file"
-accept="image/*"
-required>
-
-<img
-id="preview"
-alt="Product preview">
-
-</div>
-
-</div>
-
-
-
-<!-- DETAILS -->
-
-<div class="field full">
-
-<label>
-Product Details *
-</label>
-
-<textarea
-id="details"
-required
-placeholder="Describe your product, benefits, price, offer, website, etc."></textarea>
-
-</div>
-
-
-
-<!-- INSTRUCTIONS -->
-
-<div class="field full">
-
-<label>
-Ad Style / Special Instructions
-</label>
-
-<textarea
-id="instructions"
-placeholder="Example: Luxury style, energetic music, Urdu voiceover, Instagram Reel format..."></textarea>
-
-</div>
-
-
-</div>
-
-
-
-<div class="formBtns">
-
-
-<button
-class="btn primary"
-type="submit">
-
-Send Order on WhatsApp ↗
-
-</button>
-
-
-<button
-class="btn"
-type="button"
-id="emailBtn">
-
-Prepare Email ✉
-
-</button>
-
-
-</div>
-
-
-<p class="notice">
-
-Your product image is previewed locally in your browser.
-The WhatsApp button sends your written order details.
-Attach the original image in WhatsApp as well.
-
-</p>
-
-
-</form>
-
-</div>
-
-</div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="container">
-
-<strong>
-Adquvia
-</strong>
-
-— AI Video Ads for Modern Brands
-
-<br>
-
-WhatsApp:
-+92 305 4272499
-
-·
-
-Email:
-adquvia@gmail.com
-
-</div>
-
-</footer>
-
-
-
-<div
-class="toast"
-id="toast">
-
-Order message prepared.
-
-</div>
-
-
-
-<script>
-
-
-/* ================= YOUR CONTACT DETAILS ================= */
-
-const WA = "923054272499";
-
-const EMAIL = "adquvia@gmail.com";
-
-
-/* ================= SHORTCUT ================= */
-
-const $ = id => document.getElementById(id);
-
-
-/* ================= DARK MODE ================= */
-
-$("themeBtn").addEventListener(
-    "click",
-    () => {
-
-        document.body.classList.toggle("dark");
-
-        const dark =
-        document.body.classList.contains("dark");
-
-        $("themeBtn").textContent =
-        dark ? "☀" : "☾";
-
-        localStorage.setItem(
-            "adquvia-theme",
-            dark ? "dark" : "light"
-        );
-
-    }
-);
-
-
-/* LOAD SAVED THEME */
-
-if(
-    localStorage.getItem("adquvia-theme")
-    ===
-    "dark"
-){
-
-    document.body.classList.add("dark");
-
-    $("themeBtn").textContent = "☀";
-
-}
-
-
-/* ================= IMAGE PREVIEW ================= */
-
-$("image").addEventListener(
-    "change",
-    e => {
-
-        const file =
-        e.target.files[0];
-
-        if(file){
-
-            $("preview").src =
-            URL.createObjectURL(file);
-
-            $("preview").style.display =
-            "block";
-
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+      <div class="hero-tag">✨ Premium Video Ad Studio</div>
+      <h2>Convert Viewers into Paying Customers</h2>
+      <p>Order high-impact video ads directly from Adquiva. Pick your exact duration, attach product photos, and order via WhatsApp or Email.</p>
+      <div class="features-row">
+        <div class="feature-chip">
+          <div class="val">$1 / Sec</div>
+          <div class="lbl">Transparent Rate</div>
+        </div>
+        <div class="feature-chip">
+          <div class="val">4K & Full HD</div>
+          <div class="lbl">Reels, TikTok & Ads</div>
+        </div>
+        <div class="feature-chip">
+          <div class="val">Direct Chat</div>
+          <div class="lbl">WhatsApp Ready</div>
+        </div>
+        <div class="feature-chip">
+          <div class="val">24-48h</div>
+          <div class="lbl">Fast Turnaround</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing & Duration Card -->
+    <div class="card">
+      <div class="card-header">
+        <h3>⏱️ Video Duration & Pricing</h3>
+        <div class="guarantee-badge">$1.00 / Second</div>
+      </div>
+
+      <div class="quote-display">
+        <div>
+          <div class="quote-title">TOTAL PRICE QUOTE</div>
+          <div class="quote-amount">$<span id="priceDisplay">15</span> <span>USD</span></div>
+        </div>
+        <div class="duration-indicator">
+          <div class="num" id="durationNum">15</div>
+          <div class="unit">SECONDS</div>
+        </div>
+      </div>
+
+      <div class="presets-label">Quick Presets:</div>
+      <div class="presets-grid">
+        <button class="preset-pill" onclick="setDuration(10)">10s ($10)</button>
+        <button class="preset-pill active" onclick="setDuration(15)">15s ($15)</button>
+        <button class="preset-pill" onclick="setDuration(20)">20s ($20)</button>
+        <button class="preset-pill" onclick="setDuration(30)">30s ($30)</button>
+        <button class="preset-pill" onclick="setDuration(45)">45s ($45)</button>
+        <button class="preset-pill" onclick="setDuration(60)">60s ($60)</button>
+      </div>
+
+      <div class="slider-container">
+        <button class="step-btn" onclick="adjustDuration(-5)">−</button>
+        <input type="range" id="durationSlider" min="5" max="120" value="15" step="1" oninput="onSliderChange(this.value)" />
+        <button class="step-btn" onclick="adjustDuration(5)">+</button>
+      </div>
+
+      <div class="price-formula-note" id="formulaNote">
+        ✓ 15 seconds video ad = $15.00 USD (e.g. 10s = $10, 20s = $20, 60s = $60)
+      </div>
+    </div>
+
+    <!-- Client & Project Details Form -->
+    <div class="card">
+      <div class="card-header">
+        <h3>📝 Client & Project Information</h3>
+      </div>
+
+      <div class="form-group">
+        <label>Your Name / Contact Person <span class="required">*</span></label>
+        <input type="text" id="clientName" class="form-input" placeholder="e.g. Alex Johnson" />
+      </div>
+
+      <div class="form-group">
+        <label>Your Email Address</label>
+        <input type="email" id="clientEmail" class="form-input" placeholder="e.g. alex@yourbrand.com" />
+      </div>
+
+      <div class="form-group">
+        <label>Name of Product / Brand <span class="required">*</span></label>
+        <input type="text" id="productName" class="form-input" placeholder="e.g. Lumina Wireless Earbuds" />
+      </div>
+
+      <div class="form-group">
+        <label>Product Description</label>
+        <textarea id="productDescription" class="form-textarea" placeholder="Explain what your product does, key features, target customer, or benefits..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Briefs & Creative Notes</label>
+        <textarea id="briefs" class="form-textarea" placeholder="Script suggestions, preferred hook style, offer or call-to-action (e.g. 50% Off Today)..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Select Video Aspect Ratio</label>
+        <div class="ratio-options" id="ratioOptions">
+          <div class="option-chip active" onclick="selectRatio(this, '9:16 Vertical (Reels / TikTok / Shorts)')">9:16 Vertical (Reels/TikTok)</div>
+          <div class="option-chip" onclick="selectRatio(this, '16:9 Landscape (YouTube / Desktop)')">16:9 Landscape (YouTube)</div>
+          <div class="option-chip" onclick="selectRatio(this, '1:1 Square (Instagram / FB Feed)')">1:1 Square (Feed)</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Preferred Video Style</label>
+        <div class="style-options" id="styleOptions">
+          <div class="option-chip active" onclick="selectStyle(this, 'High-Converting UGC / Creator Style')">UGC Creator Style</div>
+          <div class="option-chip" onclick="selectStyle(this, 'Cinematic Commercial')">Cinematic Commercial</div>
+          <div class="option-chip" onclick="selectStyle(this, '3D Product Showcase')">3D Product Showcase</div>
+          <div class="option-chip" onclick="selectStyle(this, 'Minimalist Explainer')">Minimalist Explainer</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Pictures & Media -->
+    <div class="card">
+      <div class="card-header">
+        <h3>🖼️ Product Pictures & Gallery</h3>
+        <div id="imageCountBadge" class="guarantee-badge" style="display: none;">0 pictures selected</div>
+      </div>
+
+      <div class="upload-box">
+        <input type="file" id="imageInput" multiple accept="image/*" onchange="handleImageUpload(event)" />
+        <div class="upload-icon">📷</div>
+        <p><strong>Click to choose photos from Gallery or Drag & Drop</strong></p>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Supports JPG, PNG, WEBP from your phone or PC gallery</p>
+      </div>
+
+      <div class="gallery-preview" id="galleryPreview"></div>
+    </div>
+
+    <!-- Actions Section -->
+    <div class="action-card">
+      <div class="order-summary-strip">
+        <div>
+          <div class="title">Ready to Dispatch</div>
+          <div class="val" id="summaryDuration">15-Second Video Ad</div>
+        </div>
+        <div>
+          <div class="price" id="summaryPrice">$15 USD</div>
+        </div>
+      </div>
+
+      <button class="btn-whatsapp" onclick="sendViaWhatsApp()">
+        <span>💬 Order via WhatsApp (+92 305 4272499)</span>
+      </button>
+
+      <button class="btn-email" onclick="sendViaEmail()">
+        <span>✉️ Send via Email (adquiva@gmail.com)</span>
+      </button>
+
+      <div class="secondary-row">
+        <button class="btn-secondary" onclick="copyOrderDetails()">📋 Copy Order Text</button>
+        <button class="btn-secondary" onclick="window.location.href='tel:+923054272499'">📞 Direct Phone Call</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-box">
+      <div class="modal-icon">✓</div>
+      <h4 id="modalTitle">Order Prepared!</h4>
+      <p id="modalBody">Your order details have been copied and loaded into your messaging app.</p>
+      <button class="modal-btn" onclick="closeModal()">Done</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Adquiva Video Ads Studio. WhatsApp: +92 305 4272499 • Email: adquiva@gmail.com
+  </footer>
+
+  <!-- Script Logic -->
+  <script>
+    // State
+    let duration = 15;
+    let selectedRatio = "9:16 Vertical (Reels / TikTok / Shorts)";
+    let selectedStyle = "High-Converting UGC / Creator Style";
+    let attachedImages = [];
+
+    const WHATSAPP_PHONE = "923054272499";
+    const SUPPORT_EMAIL = "adquiva@gmail.com";
+
+    // Theme Toggle
+    const themeBtn = document.getElementById("themeToggle");
+    themeBtn.addEventListener("click", () => {
+      const currentTheme = document.body.getAttribute("data-theme");
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+      document.body.setAttribute("data-theme", nextTheme);
+    });
+
+    // Duration & Pricing
+    function updateUI() {
+      const price = duration; // 1 second = 1 dollar rule
+      document.getElementById("priceDisplay").innerText = price;
+      document.getElementById("durationNum").innerText = duration;
+      document.getElementById("durationSlider").value = duration;
+      document.getElementById("summaryDuration").innerText = `${duration}-Second Video Ad`;
+      document.getElementById("summaryPrice").innerText = `$${price} USD`;
+      document.getElementById("formulaNote").innerText = 
+        `✓ ${duration} seconds video ad = $${price}.00 USD (e.g. 10s = $10, 20s = $20, 60s = $60)`;
+
+      // Update preset pills
+      document.querySelectorAll(".preset-pill").forEach(pill => {
+        if (pill.innerText.startsWith(`${duration}s`)) {
+          pill.classList.add("active");
+        } else {
+          pill.classList.remove("active");
         }
-
+      });
     }
-);
 
-
-/* ================= DYNAMIC PRICING ================= */
-/*
-   Package + video length determine the price automatically.
-   Change these numbers anytime to set your own prices.
-*/
-const prices = {
-    Basic: {
-        "15": 10,
-        "30": 15,
-        "45": 18,
-        "60": 20
-    },
-    Standard: {
-        "15": 20,
-        "30": 30,
-        "45": 35,
-        "60": 40
-    },
-    Premium: {
-        "15": 40,
-        "30": 55,
-        "45": 62,
-        "60": 70
+    function setDuration(val) {
+      duration = parseInt(val, 10);
+      updateUI();
     }
-};
 
-function getSelectedLength(){
-    return $("length").value.match(/\d+/)?.[0] || "30";
-}
-
-function updatePrice(){
-    const selectedPackage = $("package").value;
-    const selectedLength = getSelectedLength();
-
-    const price =
-        prices[selectedPackage]?.[selectedLength] ?? 0;
-
-    $("totalPrice").textContent = `$${price}`;
-
-    // Small visual feedback whenever the price changes.
-    $("totalPrice").classList.remove("price-pop");
-    void $("totalPrice").offsetWidth;
-    $("totalPrice").classList.add("price-pop");
-
-    setTimeout(() => {
-        $("totalPrice").classList.remove("price-pop");
-    }, 250);
-}
-
-$("package").addEventListener("change", updatePrice);
-$("length").addEventListener("change", updatePrice);
-
-// Set the correct price when the page first loads.
-updatePrice();
-
-
-/* ================= CREATE ORDER MESSAGE ================= */
-
-function getOrderText(){
-
-    const imageFile =
-    $("image").files[0];
-
-
-    return `Hello Adquvia! 👋
-
-I want to order a video advertisement.
-
-👤 Client:
-${$("name").value}
-
-📱 WhatsApp/Phone:
-${$("phone").value}
-
-📧 Email:
-${$("email").value}
-
-📦 Product:
-${$("product").value}
-
-💼 Package:
-${$("package").value}
-
-🎬 Video Length:
-${$("length").value}
-
-💰 Price:
-${$("totalPrice").textContent}
-
-📝 Product Details:
-${$("details").value}
-
-🎨 Ad Style / Instructions:
-${$("instructions").value || "Not specified"}
-
-🖼️ Product Image:
-${imageFile ? imageFile.name : "Not attached"}
-
-Please let me know the next steps.
-
-Thank you!`;
-}
-
-
-/* ================= WHATSAPP ================= */
-
-$("orderForm").addEventListener(
-    "submit",
-    e => {
-
-        e.preventDefault();
-
-
-        if(
-            !$("orderForm").checkValidity()
-        ){
-
-            $("orderForm").reportValidity();
-
-            return;
-
-        }
-
-
-        const text =
-        encodeURIComponent(
-            getOrderText()
-        );
-
-
-        window.open(
-            `https://wa.me/${WA}?text=${text}`,
-            "_blank"
-        );
-
-
-        showToast(
-            "WhatsApp order message opened."
-        );
-
+    function adjustDuration(delta) {
+      duration = Math.min(180, Math.max(5, duration + delta));
+      updateUI();
     }
-);
 
-
-/* ================= EMAIL ================= */
-
-$("emailBtn").addEventListener(
-    "click",
-    () => {
-
-        if(
-            !$("orderForm").checkValidity()
-        ){
-
-            $("orderForm").reportValidity();
-
-            return;
-
-        }
-
-
-        const subject =
-        encodeURIComponent(
-            "New Adquvia Video Ad Order — "
-            +
-            $("product").value
-        );
-
-
-        const body =
-        encodeURIComponent(
-            getOrderText()
-        );
-
-
-        window.location.href =
-        `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-
-
-        showToast(
-            "Email app opened."
-        );
-
+    function onSliderChange(val) {
+      duration = parseInt(val, 10);
+      updateUI();
     }
-);
 
-
-/* ================= TOAST ================= */
-
-function showToast(msg){
-
-    $("toast").textContent =
-    msg;
-
-    $("toast").style.display =
-    "block";
-
-
-    setTimeout(
-        () => {
-
-            $("toast").style.display =
-            "none";
-
-        },
-        3000
-    );
-
-}
-
-
-/* ================= SCROLL ANIMATIONS ================= */
-
-const observer =
-new IntersectionObserver(
-    entries => {
-
-        entries.forEach(
-            entry => {
-
-                if(
-                    entry.isIntersecting
-                ){
-
-                    entry.target.classList.add(
-                        "show"
-                    );
-
-                }
-
-            }
-        );
-
-    },
-    {
-        threshold:.12
+    // Selectors
+    function selectRatio(el, val) {
+      document.querySelectorAll("#ratioOptions .option-chip").forEach(c => c.classList.remove("active"));
+      el.classList.add("active");
+      selectedRatio = val;
     }
-);
 
+    function selectStyle(el, val) {
+      document.querySelectorAll("#styleOptions .option-chip").forEach(c => c.classList.remove("active"));
+      el.classList.add("active");
+      selectedStyle = val;
+    }
 
-document
-.querySelectorAll(".reveal")
-.forEach(
-    el => observer.observe(el)
-);
+    // Image Upload & Gallery
+    function handleImageUpload(e) {
+      const files = Array.from(e.target.files);
+      if (!files.length) return;
 
-</script>
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          attachedImages.push({ name: file.name, src: evt.target.result });
+          renderGallery();
+        };
+        reader.readAsDataURL(file);
+      });
+    }
 
+    function removeImage(index) {
+      attachedImages.splice(index, 1);
+      renderGallery();
+    }
 
+    function renderGallery() {
+      const previewContainer = document.getElementById("galleryPreview");
+      const badge = document.getElementById("imageCountBadge");
+      previewContainer.innerHTML = "";
+
+      if (attachedImages.length > 0) {
+        badge.style.display = "inline-block";
+        badge.innerText = `${attachedImages.length} picture(s) selected`;
+      } else {
+        badge.style.display = "none";
+      }
+
+      attachedImages.forEach((img, i) => {
+        const item = document.createElement("div");
+        item.className = "preview-item";
+        item.innerHTML = `
+          <img src="${img.src}" alt="${img.name}" />
+          <button class="remove-btn" onclick="removeImage(${i})">✕</button>
+        `;
+        previewContainer.appendChild(item);
+      });
+    }
+
+    // Form Validation & Message Builders
+    function getFormData() {
+      const name = document.getElementById("clientName").value.trim();
+      const email = document.getElementById("clientEmail").value.trim();
+      const product = document.getElementById("productName").value.trim();
+      const desc = document.getElementById("productDescription").value.trim();
+      const briefs = document.getElementById("briefs").value.trim();
+
+      if (!name) {
+        alert("Please enter your name.");
+        document.getElementById("clientName").focus();
+        return null;
+      }
+      if (!product) {
+        alert("Please enter the name of your product or brand.");
+        document.getElementById("productName").focus();
+        return null;
+      }
+
+      return {
+        name,
+        email: email || "Not provided",
+        product,
+        desc: desc || "None provided",
+        briefs: briefs || "Standard high-converting structure",
+        duration,
+        price: duration,
+        ratio: selectedRatio,
+        style: selectedStyle,
+        imageCount: attachedImages.length
+      };
+    }
+
+    function buildWhatsAppText(data) {
+      return `✨ *NEW ADQUIVA VIDEO AD ORDER* ✨
+----------------------------------------
+👤 *Client Name:* ${data.name}
+📧 *Email:* ${data.email}
+🏷️ *Product / Brand:* ${data.product}
+
+⏱️ *Video Duration:* ${data.duration} Seconds
+💰 *Price Quote:* $${data.price} USD ($1/sec)
+📐 *Aspect Ratio:* ${data.ratio}
+🎨 *Style:* ${data.style}
+
+📝 *Product Description:*
+${data.desc}
+
+🎯 *Briefs & Instructions:*
+${data.briefs}
+
+🖼️ *Pictures:* ${data.imageCount} attached from gallery (sending photos in this chat)
+----------------------------------------
+🚀 Sent via Adquiva Online Studio`;
+    }
+
+    function sendViaWhatsApp() {
+      const data = getFormData();
+      if (!data) return;
+
+      const message = buildWhatsAppText(data);
+      const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE}&text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+
+      showModal("WhatsApp Opened!", "Your order is ready. Click 'Send' in WhatsApp and attach your product photos directly to the chat.");
+    }
+
+    function sendViaEmail() {
+      const data = getFormData();
+      if (!data) return;
+
+      const subject = encodeURIComponent(`[Adquiva Video Order] ${data.product} - ${data.duration}s ($${data.price})`);
+      const body = encodeURIComponent(`Dear Adquiva Team,
+
+I would like to place a video ad order:
+
+=== ORDER SUMMARY ===
+- Client Name: ${data.name}
+- Client Email: ${data.email}
+- Product/Brand: ${data.product}
+- Duration: ${data.duration} Seconds
+- Price: $${data.price} USD ($1/second)
+- Aspect Ratio: ${data.ratio}
+- Video Style: ${data.style}
+
+=== PRODUCT DESCRIPTION ===
+${data.desc}
+
+=== BRIEFS & NOTES ===
+${data.briefs}
+
+=== ATTACHMENTS ===
+${data.imageCount} photo(s) selected from gallery. Attaching to this thread.
+
+Best regards,
+${data.name}`);
+
+      window.location.href = `mailto:${SUPPORT_EMAIL}?subject=${subject}&body=${body}`;
+      showModal("Email Client Opened!", "Your email has been prefilled. Attach your photos and hit send!");
+    }
+
+    function copyOrderDetails() {
+      const data = getFormData();
+      if (!data) return;
+
+      const message = buildWhatsAppText(data);
+      navigator.clipboard.writeText(message).then(() => {
+        alert("Order details copied to clipboard!");
+      }).catch(() => {
+        alert("Could not copy automatically. Please use the WhatsApp button.");
+      });
+    }
+
+    function showModal(title, text) {
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalBody").innerText = text;
+      document.getElementById("successModal").classList.add("active");
+    }
+
+    function closeModal() {
+      document.getElementById("successModal").classList.remove("active");
+    }
+  </script>
 </body>
 </html>
